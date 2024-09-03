@@ -27,7 +27,7 @@ The project is structured as follows:
    
 2. Install dependecies using pip
    
-   pip install -r requirements.txt
+   pip3 install -r requirements.txt
 
 ## Usage
 
