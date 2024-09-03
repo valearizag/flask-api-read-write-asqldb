@@ -13,6 +13,11 @@ The project is structured as follows:
 │   ├── employees.csv
 │   ├── departments.csv
 │   ├── jobs.csv
+├── reports
+│   ├── hired_employees.pbix
+├── templates
+│   ├── employees_hired_by_department.html
+│   ├── inv_employees.html
 ├── app.py
 └── requirements.txt
 ```
@@ -34,10 +39,10 @@ The project is structured as follows:
 Ensure that the CSV files are placed in the files_sources folder.
 Run the Flask application:
 
-python app.py
+python3 app.py
 * The application will run on http://localhost:105/
 
 ## Endpoints
-* POST /full_load: Upload CSV files from the files_sources folder to the Azure SQL database.
+* POST /full_load: Upload CSV files from the files_sources folder to the Azure SQL database. The endpoint processes files corresponding to different tables in the database, validates the data, and inserts valid rows into the database. Invalid rows and files are logged for further inspection. For all files, all columns must have a value. The values must be of the accepted data type for each column.
 * GET /inv_employees: Retrieve the number of employees hired for each job and department in 2021 divided by quarter.
 * GET /list_employees_hired_by_department: Retrieve the list of departments that hired more employees than the average in 2021.

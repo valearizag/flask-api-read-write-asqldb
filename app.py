@@ -12,7 +12,7 @@ password = 'V@lenchange2024*'
 app = Flask(__name__)
 
 #Connection Azure DB
-connection_string = f'Driver={driver};Server={server},1433;Database={database};Uid={username};Pwd={password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
+connection_string = f'Driver={driver};Server={server},1433;Database={database};Uid={username};Pwd={password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=60;'
 conn = pyodbc.connect(connection_string)
 cursor = conn.cursor()
 
